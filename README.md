@@ -1,10 +1,15 @@
-# CONTINUE? — The Agent Recovery Arcade
+
+
+# [CLICK HERE TO CONTINUE? — The Agent Recovery Arcade](https://anonymous.4open.science/w/autopilot_site-6ED3/)
+
 
 An Autopilot-branded public, offline research companion to the FSE paper in `latexs/`. It presents E1, E2, and E3 as a connected museum visit, with optional interactive exhibits and access to the underlying measurements.
 
 **Every visitor-facing page is a self-contained HTML file.** CSS, JavaScript, selected data, and SVG illustrations are embedded. Each page works when opened directly from disk, without a server, CDN, runtime download, or adjacent asset file. Navigation links connect the HTML pages when the package is kept together.
 
 The existing three explorers and the manuscript are read-only inputs. This pipeline does not rebuild or edit them.
+
+[**Check it out here!**](https://anonymous.4open.science/w/autopilot_site-6ED3/)
 
 ## Build
 
