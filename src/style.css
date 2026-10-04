@@ -3,3 +3,9 @@
 .explorer.expanded .replay-layout{grid-template-columns:1fr}.explorer.expanded .graph-stage{height:700px}.explorer.expanded .replay{border-right:0;border-bottom:1px solid var(--line)}.explorer.expanded .side{display:grid;grid-template-columns:1fr 1fr;gap:32px}@media(max-width:650px){.explorer.expanded .graph-stage{height:550px}.explorer.expanded .side{display:block}}
 
 .autopilot-badge{display:inline-flex;gap:5px;align-items:center;border:1px solid #566744;border-radius:3px;padding:6px 8px;color:var(--lime);font:800 10px ui-monospace,monospace;letter-spacing:.8px;white-space:nowrap}.autopilot-badge span{color:var(--purple)}.footer-brand{display:flex;flex-direction:column;align-items:flex-start;gap:9px}.footer-brand .autopilot-badge{font-size:9px}header nav{margin-left:auto;margin-right:auto}@media(max-width:650px){header>.autopilot-badge{font-size:8px;padding:5px;letter-spacing:0}.footer-brand .autopilot-badge{font-size:8px}}
+
+/* Quiz feedback: color plus explicit wording, with only the current choice marked. */
+.prediction [data-result="correct"]{color:#9ce8b0}
+.prediction [data-result="incorrect"]{color:#ff9898}
+.prediction button[data-result="correct"]{background:#20392d;border-color:#9ce8b0}
+.prediction button[data-result="incorrect"]{background:#40252e;border-color:#ff9898}

@@ -16,6 +16,7 @@ The user's latest emphasis is equal access to the story and the data. The entran
 - `e3.html`: distributed handoff narrative, all five strategies, replay and condition metrics, complete strategy results, separate model/system latency chart with per-model filtering and pooled mean/median/p95 model latencies.
 - `theatre.html`: direct E1/E2/E3 replay and metrics.
 - `e1.html` and `lab.html`: shared delivery prototype with visible moves, persistent route-specific passes and bookings, a forced crash and random alternate route, resource mismatch, and two recovery decisions. See the iteration notes below.
+- Quizzes: selected wrong answers and feedback are red; correct answers and feedback are green, with explicit “Not quite” / “Correct” wording.
 - `field-guide.html`: definitions, experiment scopes, strategy explanations, weighting, limitations, provenance, optional local chapter stamps.
 - All explorers retain the existing shared multi-path renderer, embedded read-only. Controls: play/pause, step, scrub, start, crash point (E2/E3), route isolation, all routes, zoom, drag pan, fit, expanded view.
 - Condition CSV download, including full-precision data for every condition of the selected experiment.
@@ -78,6 +79,40 @@ Sources: `src/game-tabs.*`, `src/tutorial-game.*`, `src/delivery-game.*`, and `s
 
 Next iteration should follow user feedback on the Expert decisions and route movement; do not assume a full polish pass is wanted.
 
+## Next session: brainstorm supplementary games with the user first
+
+**Explicit user request: record this now; brainstorm together next time before building.** Preserve all existing demos, explorers, recorded replays, and the Tutorial/Expert games. New games are supplementary and must use the same retro arcade theme. Continue in small, reviewable prototypes; do not build a large game before the user can react.
+
+### Placement of the current delivery game
+
+The current game is probably better suited to **E2**, because crashes and recovery drive its lesson. Alternatively, place it on the **main page** as an introduction to the paper: why earlier choices, persistent real-world effects, and recovery matter. Decide this with the user; do not move or relabel it automatically. Preserve the Tutorial-first / Expert-second tabs, consistent bottom controls, compact laptop layout, negative credit balances, and “Recover” wording.
+
+### E1: variation and traversal dynamics before crashes
+
+Brainstorm a distinct E1 game that makes the player feel why repeated attempts can choose different paths, and why graph traversal dynamics matter. Ground the concepts in `latexs/05_rq1.tex` (and inspect the manuscript's corresponding `latexs/sections/05_rq1.tex` source relationship before editing any narrative); take numbers from audited experiment exports.
+
+Convey path coverage/breadth, normalized path entropy, sequence distance, Goal completion, strict correctness, and the model × graph effect through play. Make the distinction between exploring many paths, spreading attempts evenly, and executing correctly intuitive. These measures should affect an understandable objective rather than simply appear as another dashboard. Discuss candidate mechanics and win conditions with the user first. Prefer real graph structures and observed trace distributions, with friendly labels layered over the actual operation dependencies. Do not imply that high coverage or high/low entropy alone means quality.
+
+### E2: recovery strategies, committed effects, and interactions
+
+Brainstorm a game using one or more actual experimental API-derived graphs, relabeled into the arcade story while preserving dependencies. Put the player at the mercy of a selected recovery strategy: after a crash, let that strategy determine the continuation. The player should experience what each strategy preserves, what it re-decides, and what happens to already committed effects.
+
+Use actual recorded prefixes and recovered suffixes when feasible. Convey continuity, suffix agreement, sequence distance, coverage, and strict correctness, plus the **model × graph × strategy** interaction. Strategies to compare: Autopilot, ReAct with agent state, ReAct with external state, durable execution, and plan-and-execute. Inspect `latexs/06_rq2.tex`, methodology, implementation, and audited outputs before deciding how to portray each mechanism. Compare within matching crash histories where supported; do not quietly compare incompatible prefixes.
+
+The user wants particularly bad and highly variable situations to make the dependencies on model, graph, and strategy vivid, and to show why Autopilot's committed continuation helps. Find and document candidate conditions from the actual data. Label deliberately selected extremes as such, show denominators, and preserve access to broader results. Explain the specific benefit supported by the traces: Autopilot preserves the committed executable continuation; it does not repair a bad original plan or guarantee correctness, unanimous paths, or freedom from every failure. Do not promise that it “solves all issues.”
+
+The user also wants **Opus** examples illustrating apparently random failures for other reasons. Investigate the actual Opus traces and recorded errors before attributing causes. Current exported museum data includes Opus in E1 only, not E2/E3. Use an explicitly scoped E1 example or locate other genuine supporting data; never invent Opus recovery trials or pass synthetic examples off as measurements. Distinguish provider/infrastructure failures from route-choice failures only when evidence supports that distinction.
+
+### E3: practical recovery under a finite resource budget
+
+Brainstorm a game where the player has finite resources and the practical benefits of stable execution and efficient recovery help them win. Discuss which resources make the tradeoffs legible—e.g. energy, time, work capacity, or a budget—before settling on a design. Use actual E3 graph(s), traces, and measured model/system timings where feasible, with any conversion into game units explicitly illustrative.
+
+Gamify primary failure, standby takeover, leader election, state restoration, and continuation. Inspect the implementation and `latexs/07_rq3.tex` before choosing which coordination mechanisms to portray, so the game teaches what the system actually does. Make Autopilot's supported strengths matter to the objective while preserving the distinctions between continuity, correctness, and speed. Current measured resumed-system times exclude detection, election, and initial restoration/setup; do not present them as full crash-to-finish latency. Any additional election/detection timing in the game must be separately sourced or clearly simulated.
+
+### Next-session starting point
+
+Start by reviewing these goals with the user and brainstorming a few bounded mechanics for each experiment, including which real graphs/traces make the concepts clearest. Choose a first prototype together. Preserve the user's equal access to story and evidence; never gate the existing dashboards or recorded demos on game progress.
+
 ## Optional next refinements
 
 The current package is usable. These are improvements, not prerequisites left blocking it:
@@ -85,7 +120,7 @@ The current package is usable. These are improvements, not prerequisites left bl
 1. Get user feedback on the delivery story, visual density, and the balance of games versus direct data exploration.
 2. Add a paired-condition comparison panel or scatterplot to inspect two metrics at once (e.g. variation versus correctness) without replacing existing exact-condition cards.
 3. Add audited prefix-specific coverage numerators/denominators to the replay panel if wanted. Do not reconstruct them by summing condition aggregates. The current cards deliberately show full-condition metrics with explicit scope.
-4. Iterate on the E1 delivery prototype after user feedback; avoid a full game polish pass yet.
+4. Follow the next-session supplementary-game brainstorming agenda above before changing game placement or building new games.
 5. Add a printable paper-to-exhibit map or self-contained paper reading page if requested. Current pages walk through the paper's reasoning but do not embed the manuscript PDF.
 6. Conduct broader accessibility review and user testing. Current checks cover native controls, focus styling, reduced-motion CSS, text equivalents, and one mobile width; they are not a formal accessibility certification.
 7. If publication is requested, choose the static hosting destination with the user. Do not assume that the `sites/` folder means the Sites connector service.
