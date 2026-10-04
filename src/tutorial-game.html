@@ -1,0 +1,24 @@
+<section id="tutorial-game" class="delivery-game delivery-tutorial" aria-label="The last delivery game">
+  <div class="delivery-marquee"><strong>CONTINUE?</strong><span id="tutorial-phase">01 / CHOOSE YOUR ROUTE</span><button id="tutorial-reset">Restart</button></div>
+  <div class="delivery-hud" aria-label="Your resources"><div>Wallet <strong id="tutorial-wallet">2 credits</strong></div><div>Your bag <strong id="tutorial-bag">Parcel</strong></div><div>World <strong id="tutorial-world">No bookings</strong></div></div>
+  <div class="delivery-screen">
+    <svg id="tutorial-map" viewBox="0 0 900 330" role="img" aria-labelledby="tutorial-map-title tutorial-map-desc">
+      <title id="tutorial-map-title">Three delivery routes</title><desc id="tutorial-map-desc">Choose a route, buy its pass, cross its gate, and deliver. You are Pip, the parcel robot carrying a repair part to Mara’s workshop.</desc>
+      <defs><pattern id="tutorial-grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#202c41" stroke-width="1"/></pattern></defs>
+      <rect width="900" height="330" fill="url(#tutorial-grid)"/>
+      <g id="tutorial-lanes"></g>
+      <g class="delivery-endpoint"><rect x="25" y="140" width="80" height="50"/><text x="65" y="171">DEPOT</text><rect x="800" y="140" width="80" height="50"/><text x="840" y="171">GOAL</text></g>
+      <g id="tutorial-token" transform="translate(120 165)"><image href="{{PIP_SPRITE}}" x="-35" y="-48" width="70" height="70"/></g>
+    </svg>
+    <div id="tutorial-mobile-map" class="delivery-mobile-map" aria-label="Route map"></div>
+    <div id="tutorial-crash" class="delivery-crash" hidden><strong>NAVIGATION CRASH</strong><p>Your wheels stop. Your route planner crashed.<br>The payment went through. The booking still exists.</p><span>Nothing in the world has been undone.</span></div>
+  </div>
+  <div class="delivery-console">
+    <div class="delivery-prompt" aria-live="polite" aria-atomic="true"><span id="tutorial-kicker">MISSION / ONE PARCEL. ONE FARE.</span><h2 id="tutorial-title">Pick your way across.</h2><p id="tutorial-message">All three routes work from here. Each pass costs your 2 credits and reserves one delivery slot.</p></div>
+    <div id="tutorial-route-choices" class="delivery-route-choices"><button data-tutorial-route="0">1 · Ferry <small>Requires a ferry ticket</small></button><button data-tutorial-route="1">2 · Cargo lift <small>Requires a lift pass</small></button><button data-tutorial-route="2">3 · Footbridge <small>Requires a bridge permit</small></button></div>
+    <div class="delivery-buttons"><button id="tutorial-next" class="primary" hidden>Next move</button><button id="tutorial-restore" hidden>Recover the original route</button><button id="tutorial-rebuy" hidden>Buy the new pass on credit</button><button id="tutorial-retry" hidden>Replay this crash</button></div>
+    <p class="delivery-key-help">Click a route to begin. Keyboard: Tab to a control, then Enter. Focus “Next move” and use Space to advance.</p>
+  </div>
+  <details class="delivery-history"><summary>World history <span id="tutorial-event-count">0 events</span></summary><ol id="tutorial-events"></ol></details>
+</section>
+<p class="delivery-caption">Playable illustration · E1 studies route variation; E2 studies recovery. Here, a crash deliberately assigns one of the other two routes at random. Tickets, debt, and bookings are invented teaching rules, not measured outcomes or a reproduction of a benchmark graph. The three delivery promises are a game score; benchmark strict correctness also checks failed and repeated calls.</p>

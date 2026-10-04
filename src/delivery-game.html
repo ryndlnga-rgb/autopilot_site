@@ -1,0 +1,29 @@
+<section id="delivery-game" class="delivery-game delivery-expert" aria-label="The last delivery game">
+  <div class="delivery-marquee"><strong>PIP / LAST DELIVERY</strong><span id="delivery-phase">01 / PLAN</span><button id="delivery-reset">New run</button></div>
+  <div class="delivery-hud" aria-label="Your resources"><div>Wallet <strong id="delivery-wallet">2 credits</strong></div><div>Battery <strong id="delivery-battery">7 / 7</strong></div><div>Equipment <strong id="delivery-bag">Repair part</strong></div></div>
+  <div class="delivery-screen">
+    <div id="delivery-map-scroll" class="delivery-map-scroll" tabindex="0" aria-label="Delivery map. Scroll sideways on a small screen.">
+      <svg id="delivery-map" viewBox="0 -10 960 370" role="img" aria-labelledby="delivery-map-title delivery-map-desc">
+        <title id="delivery-map-title">Pip’s route through the town</title><desc id="delivery-map-desc">Depot, Dispatch, a shared fork, three crossings, three workshop entrances, and a charging loop.</desc>
+        <defs><pattern id="delivery-grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#213345" stroke-width="1"/></pattern></defs>
+        <rect width="960" height="360" fill="url(#delivery-grid)"/>
+        <path class="town-road" d="M65 160H335 M335 160V320H435V220H335"/>
+        <path id="delivery-plan-line" class="plan-line" d=""/>
+        <g id="delivery-lanes"></g>
+        <g class="delivery-station"><rect x="20" y="140" width="90" height="40"/><text x="65" y="166">DEPOT</text><rect x="145" y="140" width="115" height="40"/><text x="202" y="166">DISPATCH</text><rect x="297" y="140" width="76" height="40"/><text x="335" y="166">FORK</text><rect x="350" y="300" width="125" height="40"/><text x="412" y="326">CHARGER</text><text class="map-note" x="412" y="354">1 credit · +3 battery</text><rect x="850" y="140" width="90" height="40"/><text x="895" y="166">MARA’S</text><text class="map-note" x="895" y="200">WORKSHOP</text></g>
+        <g id="delivery-recipient" hidden><rect x="-46" y="-15" width="92" height="30"/><text y="5">MARA HERE</text></g>
+        <g id="delivery-token"><image href="{{PIP_SPRITE}}" x="-40" y="-66" width="80" height="80"/><text y="29">PIP</text></g>
+      </svg>
+    </div>
+    <div id="delivery-crash" class="delivery-crash" hidden><strong>NAVIGATION CRASH</strong><p>Your wheels stop at the fork.<br>Your route planner has crashed.</p><span>Your purchases and messages are still out there.</span></div>
+    <p class="delivery-map-key"><span>Dashed lime: your original plan</span><span>Solid gold: roads you travelled</span><span>Coral: recovery’s new turn</span></p>
+  </div>
+  <div class="delivery-world"><strong>OUT IN THE TOWN</strong><p id="delivery-world">No crossing reserved. Mara is at the workshop.</p></div>
+  <div class="delivery-console">
+    <div class="delivery-prompt" aria-live="polite" aria-atomic="true"><span id="delivery-kicker">MISSION / MARA NEEDS THIS PART</span><h2 id="delivery-title">Which way to the workshop?</h2><p id="delivery-message">A ferry saves battery. A road saves money. Choose a route, then book its crossing at Dispatch.</p></div>
+    <div id="delivery-route-choices" class="delivery-route-choices"></div>
+    <div id="delivery-actions" class="delivery-buttons"></div>
+  </div>
+  <details class="delivery-history"><summary>Receipts &amp; messages <span id="delivery-event-count">0 events</span></summary><ol id="delivery-events"></ol></details>
+</section>
+<p class="delivery-caption">Playable illustration · E1 studies route variation; E2 studies recovery. This scenario deliberately reopens a route decision after a crash. Prices, battery, reservations, and town effects are invented teaching rules. A changed route can still meet every delivery promise if you account for earlier effects. The game score is separate from benchmark correctness, which also checks failed and repeated calls.</p>

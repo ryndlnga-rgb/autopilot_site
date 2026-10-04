@@ -1,0 +1,44 @@
+
+/* The expert level extends the same cabinet used by the tutorial. */
+.game-level-tabs{display:flex;gap:12px;margin:22px 0 0;border-bottom:2px solid var(--line)}.game-level-tabs button{border-radius:0;border-bottom:0;min-width:180px;display:block;text-align:left;font:800 18px ui-monospace,monospace;padding:14px 20px}.game-level-tabs button span{display:block;font:14px/1.5 system-ui,sans-serif;color:var(--muted);margin-top:4px}.game-level-tabs [aria-selected="true"]{border-color:var(--lime);background:#2a3633;color:var(--lime)}.level-brief{font-size:16px;max-width:900px;margin:18px 0}.delivery-expert .delivery-marquee{background:#302b3a}.delivery-expert .delivery-marquee>strong{color:#ffd080;font-size:18px}.delivery-expert .delivery-hud{grid-template-columns:.65fr .6fr 1.75fr}.delivery-expert .delivery-console{padding:18px 22px;background:#1b2435}.delivery-expert .delivery-prompt p{max-width:1050px}.delivery-expert .delivery-route-choices button{font-family:system-ui,sans-serif;border-color:#647a83}.delivery-expert .delivery-route-choices strong{display:block;font:800 18px ui-monospace,monospace;color:#ffd080}.delivery-expert .delivery-route-choices span{display:block;margin-top:8px;font-size:16px}.delivery-expert .delivery-route-choices small{display:block;font-size:14px;min-height:38px}.delivery-expert .delivery-buttons{gap:8px}.delivery-expert .delivery-buttons button{font-size:14px;min-height:44px}.delivery-expert .delivery-screen{padding:0;background:#0b1b27}.delivery-map-scroll{overflow:auto;overscroll-behavior-x:contain;scrollbar-color:#788b9e #102132}.delivery-expert .delivery-screen svg{display:block;width:100%;min-width:800px;max-height:none;height:auto}.delivery-expert .town-road{stroke:#455f71;stroke-width:12;fill:none;stroke-linejoin:round}.delivery-expert .plan-line{stroke:var(--lime);stroke-width:3;fill:none;stroke-dasharray:8 7}.delivery-expert .delivery-lane .town-road{stroke:#455f71;stroke-width:12;stroke-dasharray:none}.delivery-expert .delivery-lane.planned .town-road{stroke:#789453;stroke-width:12}.delivery-expert .delivery-lane.assigned .town-road{stroke:#bd725d;stroke-width:12}.delivery-expert .delivery-lane .travelled-road{stroke:#ffd080;stroke-width:4;fill:none;visibility:hidden;stroke-dasharray:none}.delivery-expert .delivery-lane.travelled .travelled-road{visibility:visible}.delivery-expert .delivery-lane text{font:16px ui-monospace,monospace;fill:#dbe5e7;text-anchor:middle}.delivery-expert .delivery-lane .lane-name{fill:#b7d4e0;font-weight:800}.delivery-expert .delivery-lane .lane-state{font-size:15px;fill:#b6c7ce}.delivery-expert .delivery-lane.held .lane-state{fill:#ffd080}.delivery-expert .delivery-lane .gate{fill:#162b37;stroke:#68848e;stroke-width:2}.delivery-expert .delivery-lane.held .gate{fill:#394126;stroke:#d9fa72}.delivery-expert .delivery-lane .gate-label{font-size:14px}.delivery-expert .delivery-lane circle{fill:#d9fa72;stroke:#1c2e30;stroke-width:3}.delivery-expert .delivery-lane .bay-label{font-size:15px}.delivery-station rect{fill:#192c39;stroke:#809ca4;stroke-width:2}.delivery-station text{font:700 16px ui-monospace,monospace;text-anchor:middle;fill:#eee6d2}.delivery-station .map-note{font-size:14px;font-weight:400;fill:#b5c6d0}#delivery-token image,#tutorial-token image{image-rendering:pixelated}#delivery-token text{fill:#ffe1a2;stroke:#102132;stroke-width:4px;paint-order:stroke;font:800 14px ui-monospace,monospace;text-anchor:middle}#delivery-recipient rect{fill:#c8b7f3;stroke:#1a2030;stroke-width:2}#delivery-recipient text{text-anchor:middle;fill:#201c36;font:800 14px ui-monospace,monospace}.delivery-map-key{display:flex;gap:10px 24px;flex-wrap:wrap;font:14px/1.5 ui-monospace,monospace;margin:0;padding:12px 22px;background:#142432}.delivery-map-key span:nth-child(1){color:var(--lime)}.delivery-map-key span:nth-child(2){color:#ffd080}.delivery-map-key span:nth-child(3){color:var(--coral)}.delivery-world{padding:16px 22px;border-top:1px solid #4d6170;background:#26332f}.delivery-world>strong{font:800 14px ui-monospace,monospace;color:var(--lime)}.delivery-world p{font-size:16px;color:#dae3d5;margin:6px 0 0}.delivery-expert .delivery-crash{inset:15% 18% 24%}.delivery-expert .delivery-caption{font-size:14px}
+@media(max-width:650px){.game-level-tabs{gap:8px}.game-level-tabs button{min-width:0;flex:1;padding:12px;font-size:17px}.game-level-tabs button span{font-size:14px}.delivery-expert .delivery-hud{grid-template-columns:1fr 1fr}.delivery-expert .delivery-hud>div:last-child{grid-column:1/-1}.delivery-expert .delivery-console{padding:16px 14px}.delivery-expert .delivery-route-choices small{margin-left:0;min-height:0}.delivery-expert .delivery-screen svg{min-height:0;min-width:800px}.delivery-expert .delivery-crash{inset:10% 5% 25%}.delivery-expert .delivery-buttons{display:flex;flex-direction:column}.delivery-map-key{padding:10px 14px;font-size:14px}.delivery-world{padding:14px}.delivery-map-scroll:after{content:'Scroll sideways to explore the map';display:block;position:sticky;left:0;color:#b6c7ce;font-size:14px;padding:8px 14px}.delivery-expert .delivery-prompt h2{font-size:22px}}
+.delivery-expert .delivery-lane .planned-road{stroke:var(--lime);stroke-width:3;fill:none;stroke-dasharray:8 7;visibility:hidden}.delivery-expert .delivery-lane.planned .planned-road{visibility:visible}.delivery-expert .delivery-lane.planned .town-road{stroke:#455f71}.delivery-expert .delivery-lane.assigned .town-road{stroke:#bd725d}
+
+/* Keep the HUD, map, and bottom controls together in a tutorial-sized cabinet. */
+.delivery-expert .delivery-marquee{padding:8px 16px}
+.delivery-expert .delivery-hud>div{padding:8px 16px}
+.delivery-expert .delivery-screen svg{height:clamp(260px,40vh,310px);min-width:0;max-height:310px}
+.delivery-expert .delivery-lane text{font-size:18px}
+.delivery-expert .delivery-lane .lane-state,.delivery-expert .delivery-lane .bay-label,.delivery-expert .delivery-lane .gate-label{font-size:17px}
+.delivery-expert .delivery-station text{font-size:18px}
+.delivery-expert .delivery-station .map-note{font-size:17px}
+.delivery-expert .delivery-map-key{padding:5px 16px;gap:6px 18px;font-size:14px}
+.delivery-expert .delivery-world{padding:7px 16px;display:flex;align-items:baseline;gap:12px}
+.delivery-expert .delivery-world>strong{flex-shrink:0;font-size:14px}
+.delivery-expert .delivery-world p{font-size:14px;line-height:1.45;margin:0}
+.delivery-expert .delivery-console{padding:12px 16px}
+.delivery-expert .delivery-prompt h2{font-size:22px;margin:5px 0}
+.delivery-expert .delivery-prompt p{line-height:1.4;margin-bottom:10px;max-width:none}
+.delivery-expert .delivery-route-choices{gap:10px}
+.delivery-expert .delivery-route-choices button{padding:9px 12px}
+.delivery-expert .delivery-route-choices strong{font-size:16px}
+.delivery-expert .delivery-route-choices span{margin-top:3px;font-size:14px}
+.delivery-expert .delivery-route-choices small{min-height:0;margin-top:3px;line-height:1.3}
+.delivery-expert .delivery-buttons button{padding:8px 12px}
+.delivery-expert .delivery-history{padding:8px 16px}
+.delivery-expert .delivery-crash{inset:8% 18% 15%}
+@media(max-width:650px){
+ .delivery-expert .delivery-screen svg{height:280px;min-width:747px}
+ .delivery-expert .delivery-map-key{gap:3px 12px}
+ .delivery-expert .delivery-world{display:block}
+ .delivery-expert .delivery-world p{margin-top:4px}
+ .delivery-expert .delivery-route-choices button{padding:8px 12px}
+ .delivery-expert .delivery-crash{inset:5% 5% 25%}
+}
+@media(min-width:651px){
+ .delivery-expert .delivery-marquee{padding-block:4px}
+ .delivery-expert .delivery-hud>div{padding-block:6px}
+ .delivery-expert .delivery-world{padding-block:5px}
+ .delivery-expert .delivery-console{padding-block:8px}
+ .delivery-expert .delivery-history{padding-block:6px}
+}
